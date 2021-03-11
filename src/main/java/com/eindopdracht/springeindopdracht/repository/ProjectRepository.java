@@ -1,0 +1,11 @@
+package com.eindopdracht.springeindopdracht.repository;
+
+import com.eindopdracht.springeindopdracht.model.Project;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ProjectRepository extends JpaRepository <Project, Long> {
+
+    List<Project> findAllBy(); //zodra ik String name als parameter opgaf, kreeg ik exit code -1
+}
