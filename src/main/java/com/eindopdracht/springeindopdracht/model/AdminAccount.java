@@ -7,3 +7,5 @@ public class AdminAccount extends UserAccount {
     public void deactivateBand() {};
     public void removeProject() {};
 }
+
+//is deze klasse wel nodig?

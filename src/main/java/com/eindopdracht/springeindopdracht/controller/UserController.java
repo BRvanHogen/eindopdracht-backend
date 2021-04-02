@@ -18,6 +18,12 @@ public class UserController {
 @Autowired
 private UserService userService;
 
+
+@GetMapping(value = "/info")
+public ResponseEntity<Object> getInfo() {
+    return new ResponseEntity<>("/info endpoint available to all", HttpStatus.OK);
+}
+
     @GetMapping(value = "/user")
     public ResponseEntity<Object> getUsers() {
         List<UserAccount> userAccounts = userService.getAllUsers();
