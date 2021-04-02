@@ -3,6 +3,7 @@ package com.eindopdracht.springeindopdracht.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "user_account")
 public class UserAccount {
 
     @Id
@@ -10,14 +11,16 @@ public class UserAccount {
     long id;
 
     //attributes
-    @Column
-    String userName;
-    @Column
+    @Column (nullable = false, unique = true)
+    String username;
+    @Column (nullable = false)
     String password;
     @Column
     String email;
-    @Column
+    @Column (nullable = false)
     boolean enabled = true;
+    @Column
+    private String apikey;
 
 
 //getters and setters
@@ -41,12 +44,12 @@ public class UserAccount {
 
 
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String userName) {
+        this.username = userName;
     }
 
     public String getPassword() {
@@ -55,5 +58,9 @@ public class UserAccount {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setApikey(String apikey) {
+        this.apikey = apikey;
     }
 }
